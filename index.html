@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propera - Invest in African Real Estate from Anywhere</title>
+    <meta name="description" content="Propera connects diaspora investors with verified property developers across Africa. Transparent payments, real-time updates, and trust scores.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-dark: #036B4A;
+            --accent: #D4AF37;
+            --accent-light: #F4E3A6;
+            --hero-bg: #0A1411;
+            --light-bg: #F8FAF9;
+            --card-bg: #FFFFFF;
+            --card-dark: #132621;
+            --text-light: #FFFFFF;
+            --text-dark: #1A2E26;
+            --text-muted: #64746D;
+            --text-muted-light: #A0B8B0;
+            --border: #E2E8E5;
+            --border-dark: #1E3B32;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .nav-brand-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-light);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-signin {
+            padding: 10px 20px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .nav-signin:hover {
+            opacity: 0.8;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--hero-bg);
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 700px;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 20, 17, 0.82);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 8px 16px;
+            border-radius: 24px;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge i {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .hero-badge span {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            font-weight: 800;
+            color: var(--text-light);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            max-width: 650px;
+        }
+
+        .hero-title .accent {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-muted-light);
+            line-height: 1.6;
+            max-width: 540px;
+            margin-bottom: 36px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--hero-bg);
+            padding: 16px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            background: var(--primary-dark);
+            padding: 32px 0;
+        }
+
+        .stats-inner {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .stat-item i {
+            color: var(--accent);
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted-light);
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 56px;
+        }
+
+        /* ===== FEATURES ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(5, 150, 105, 0.08);
+        }
+
+        .feature-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(5, 150, 105, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .feature-icon i {
+            font-size: 22px;
+            color: var(--primary);
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-section {
+            background: var(--hero-bg);
+            padding: 100px 0;
+        }
+
+        .how-section .section-label {
+            color: var(--accent);
+        }
+
+        .how-section .section-title {
+            color: var(--text-light);
+        }
+
+        .journey-label {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-muted-light);
+            letter-spacing: 1px;
+            text-align: center;
+            margin-bottom: 24px;
+            margin-top: 12px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .step-card {
+            border: 1px solid var(--border-dark);
+            border-radius: 14px;
+            padding: 28px;
+        }
+
+        .step-card.developer {
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .step-num {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .step-card.developer .step-num {
+            color: var(--accent);
+        }
+
+        .step-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: var(--text-muted-light);
+            line-height: 1.5;
+        }
+
+        /* ===== DUAL SECTION ===== */
+        .dual-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .dual-card {
+            border-radius: 20px;
+            padding: 44px;
+        }
+
+        .dual-card.investors {
+            background: var(--primary);
+        }
+
+        .dual-card.developers {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+        }
+
+        .dual-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .dual-card.investors .dual-icon {
+            color: var(--accent);
+        }
+
+        .dual-card.developers .dual-icon {
+            color: var(--primary);
+        }
+
+        .dual-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .dual-card.investors .dual-title {
+            color: var(--text-light);
+        }
+
+        .dual-card.developers .dual-title {
+            color: var(--text-dark);
+        }
+
+        .dual-desc {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .dual-card.investors .dual-desc {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .dual-card.developers .dual-desc {
+            color: var(--text-muted);
+        }
+
+        .dual-points {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .dual-point {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .dual-card.investors .dual-point {
+            color: var(--text-light);
+        }
+
+        .dual-card.investors .dual-point i {
+            color: var(--accent);
+        }
+
+        .dual-card.developers .dual-point {
+            color: var(--text-dark);
+        }
+
+        .dual-card.developers .dual-point i {
+            color: var(--primary);
+        }
+
+        /* ===== TRUST ===== */
+        .trust-section {
+            background: var(--light-bg);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .trust-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .trust-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .trust-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(5, 150, 105, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+        }
+
+        .trust-icon i {
+            font-size: 26px;
+            color: var(--primary);
+        }
+
+        .trust-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .trust-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .about-content .section-label,
+        .about-content .section-title {
+            text-align: left;
+        }
+
+        .about-text {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 28px;
+            align-items: center;
+        }
+
+        .about-stat-value {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .about-stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .about-stat-divider {
+            width: 1px;
+            height: 36px;
+            background: var(--border);
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background: var(--hero-bg);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--text-light);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle {
+            font-size: 17px;
+            color: var(--text-muted-light);
+            margin-bottom: 36px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--hero-bg);
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #070E0B;
+            padding: 60px 0 36px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .footer-brand-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .footer-tagline {
+            font-size: 14px;
+            color: var(--text-muted-light);
+            line-height: 1.5;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 64px;
+        }
+
+        .footer-link-col h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-link-col a {
+            display: block;
+            font-size: 14px;
+            color: var(--text-muted-light);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+
+        .footer-link-col a:hover {
+            color: var(--text-light);
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: var(--border-dark);
+            margin-bottom: 28px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            color: var(--text-muted-light);
+        }
+
+        .footer-disclaimer {
+            font-size: 12px;
+            color: rgba(160, 184, 176, 0.6);
+            max-width: 480px;
+            text-align: right;
+        }
+
+        .app-badges {
+            display: flex;
+            gap: 14px;
+            margin-top: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: transform 0.2s, opacity 0.2s;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .app-badge:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .app-badge i {
+            font-size: 24px;
+        }
+
+        .app-badge-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .app-badge-small {
+            font-size: 10px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .app-badge-big {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .cta-badges {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== MAILING LIST POPUP ===== */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 20, 17, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .popup-overlay.show {
+            display: flex;
+        }
+
+        .popup-box {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 48px 40px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+            animation: popIn 0.3s ease;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: color 0.2s;
+        }
+
+        .popup-close:hover {
+            color: var(--text-dark);
+        }
+
+        .popup-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(5, 150, 105, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .popup-icon i {
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .popup-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .popup-desc {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .popup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .popup-input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--light-bg);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .popup-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        }
+
+        .popup-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .popup-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .popup-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .popup-skip {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 8px;
+            padding: 8px;
+            transition: color 0.2s;
+        }
+
+        .popup-skip:hover {
+            color: var(--text-dark);
+        }
+
+        .popup-success {
+            display: none;
+        }
+
+        .popup-success.show {
+            display: block;
+        }
+
+        .popup-success i {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .popup-success h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .popup-success p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 480px) {
+            .popup-box {
+                padding: 32px 24px;
+            }
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-section {
+            background: var(--light-bg);
+            padding: 100px 0;
+        }
+
+        .contact-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info {
+            padding-top: 20px;
+        }
+
+        .contact-info .section-label,
+        .contact-info .section-title {
+            text-align: left;
+        }
+
+        .contact-desc {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .contact-detail-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(5, 150, 105, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-detail-icon i {
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        .contact-detail-text {
+            font-size: 15px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .contact-detail-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .form-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--light-bg);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 24px 0;
+        }
+
+        .form-section-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .checkbox-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        .form-success i {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .form-success h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-success p {
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .contact-row {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 24px;
+            }
+
+            .checkbox-row {
+                flex-direction: column;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-inner {
+                padding: 0 20px;
+            }
+
+            .hero {
+                min-height: 560px;
+                padding-bottom: 48px;
+            }
+
+            .hero-content {
+                padding: 0 20px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section {
+                padding: 64px 0;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dual-row {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-row {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .cta-title {
+                font-size: 30px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                gap: 32px;
+                flex-wrap: wrap;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .footer-disclaimer {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-signin {
+                display: none;
+            }
+
+            .stats-inner {
+                justify-content: center;
+            }
+
+            .stat-item {
+                min-width: 100px;
+            }
+
+            .dual-card {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mailing List Popup -->
+    <div class="popup-overlay" id="mailingPopup">
+        <div class="popup-box">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <div id="popupFormContent">
+                <div class="popup-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h2 class="popup-title">Stay Ahead of the Market</h2>
+                <p class="popup-desc">Join our mailing list for exclusive early access to the newest investment opportunities across Africa. Be the first to know when verified properties go live.</p>
+                <div class="popup-form">
+                    <input type="text" class="popup-input" id="popupName" placeholder="Your full name">
+                    <input type="email" class="popup-input" id="popupEmail" placeholder="Your email address">
+                    <button class="popup-submit" id="popupSubmitBtn" onclick="submitPopup()">Join the Mailing List</button>
+                </div>
+                <button class="popup-skip" onclick="closePopup()">No thanks, maybe later</button>
+            </div>
+            <div class="popup-success" id="popupSuccess">
+                <i class="fas fa-circle-check"></i>
+                <h3>You're on the list!</h3>
+                <p>We'll send you the latest opportunities as soon as they go live.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/welcome.html" class="nav-brand">
+                <div class="nav-logo"><img src="/propera-logo.png" alt="Propera"></div>
+                <span class="nav-brand-text">Propera</span>
+            </a>
+            <div class="nav-actions">
+                <a href="#contact" class="nav-signin">Contact</a>
+                <a href="#join" onclick="openMailingModal(event)" class="nav-signin">Sign In</a>
+                <a href="#join" onclick="openMailingModal(event)" class="nav-cta">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Modern luxury property" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-shield-halved"></i>
+                <span>Verified Properties Only</span>
+            </div>
+            <h1 class="hero-title">Invest in African<br>Real Estate,<br><span class="accent">From Anywhere</span></h1>
+            <p class="hero-subtitle">Propera connects diaspora investors with verified property developers across Africa. Transparent payments, real-time updates, and trust scores — all in one platform.</p>
+            <div class="hero-buttons">
+                <a href="#join" onclick="openMailingModal(event)" class="btn-primary">Start Investing <i class="fas fa-arrow-right"></i></a>
+                <a href="#how-it-works" class="btn-secondary"><i class="fas fa-play-circle"></i> How It Works</a>
+            </div>
+            <div class="app-badges">
+                <a href="https://apps.apple.com" target="_blank" rel="noopener" class="app-badge">
+                    <i class="fab fa-apple"></i>
+                    <div class="app-badge-text">
+                        <span class="app-badge-small">Download on the</span>
+                        <span class="app-badge-big">App Store</span>
+                    </div>
+                </a>
+                <a href="https://play.google.com" target="_blank" rel="noopener" class="app-badge">
+                    <i class="fab fa-google-play"></i>
+                    <div class="app-badge-text">
+                        <span class="app-badge-small">Get it on</span>
+                        <span class="app-badge-big">Google Play</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container stats-inner">
+            <div class="stat-item">
+                <i class="fas fa-cube"></i>
+                <div class="stat-value">200+</div>
+                <div class="stat-label">Verified Units</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-building"></i>
+                <div class="stat-value">15+</div>
+                <div class="stat-label">Developments</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-globe-africa"></i>
+                <div class="stat-value">6</div>
+                <div class="stat-label">African Countries</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-chart-line"></i>
+                <div class="stat-value">$50M+</div>
+                <div class="stat-label">Assets Listed</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-label">Platform Features</div>
+            <h2 class="section-title">Everything You Need to<br>Invest with Confidence</h2>
+            <p class="section-subtitle">Built from the ground up for diaspora investors who demand transparency and accountability.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3 class="feature-title">Verified Developers</h3>
+                    <p class="feature-desc">Every developer undergoes rigorous admin verification. View trust scores, company documents, and track records before investing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
+                    <h3 class="feature-title">Transparent Payments</h3>
+                    <p class="feature-desc">Payment milestones with proof uploads, developer confirmations, and real-time progress tracking. Know exactly where your money goes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                    <h3 class="feature-title">Direct Communication</h3>
+                    <p class="feature-desc">Chat directly with developers in your project workspace. File attachments, payment reminders, and build updates — all in one thread.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3 class="feature-title">Trust Scores</h3>
+                    <p class="feature-desc">Our proprietary scoring system rates developers on verification, transparency, payment history, and communication — updated in real time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-folder-open"></i></div>
+                    <h3 class="feature-title">Document Vault</h3>
+                    <p class="feature-desc">Secure storage for contracts, title documents, payment receipts, and more. Everything you need, organized and accessible.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                    <h3 class="feature-title">Real-Time Updates</h3>
+                    <p class="feature-desc">Get notified of payment deadlines, build milestones, and new investment opportunities. Never miss a critical update.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-section" id="how-it-works">
+        <div class="container">
+            <div class="section-label">How It Works</div>
+            <h2 class="section-title">Simple Steps to Your<br>Next Investment</h2>
+
+            <div class="journey-label">For Investors</div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <h4 class="step-title">Discover Properties</h4>
+                    <p class="step-desc">Browse verified developments across Africa. Filter by country, type, and price range.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <h4 class="step-title">Express Interest</h4>
+                    <p class="step-desc">Select your unit and register interest. Our team connects you with the developer.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <h4 class="step-title">Secure & Pay</h4>
+                    <p class="step-desc">Get allocated your unit with a structured payment plan. Upload proof, track milestones.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">04</div>
+                    <h4 class="step-title">Track Progress</h4>
+                    <p class="step-desc">Monitor construction updates, chat with your developer, and manage documents.</p>
+                </div>
+            </div>
+
+            <div class="journey-label">For Developers</div>
+            <div class="steps-grid">
+                <div class="step-card developer">
+                    <div class="step-num">01</div>
+                    <h4 class="step-title">List Your Development</h4>
+                    <p class="step-desc">Submit your project with documents. Our admin team verifies every detail.</p>
+                </div>
+                <div class="step-card developer">
+                    <div class="step-num">02</div>
+                    <h4 class="step-title">Attract Investors</h4>
+                    <p class="step-desc">Your verified listing reaches diaspora investors worldwide.</p>
+                </div>
+                <div class="step-card developer">
+                    <div class="step-num">03</div>
+                    <h4 class="step-title">Manage Allocations</h4>
+                    <p class="step-desc">Allocate units, set payment plans, and send reminders — all from your dashboard.</p>
+                </div>
+                <div class="step-card developer">
+                    <div class="step-num">04</div>
+                    <h4 class="step-title">Build Trust</h4>
+                    <p class="step-desc">Earn trust scores through transparency, timely communication, and on-time delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Investors / For Developers -->
+    <section class="section">
+        <div class="container">
+            <div class="dual-row">
+                <div class="dual-card investors">
+                    <div class="dual-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="dual-title">For Investors</h3>
+                    <p class="dual-desc">Whether you're in London, New York, or Toronto — invest in verified African real estate with full transparency. Track every payment, monitor construction progress, and communicate directly with developers.</p>
+                    <div class="dual-points">
+                        <div class="dual-point"><i class="fas fa-check-circle"></i> Browse verified developments</div>
+                        <div class="dual-point"><i class="fas fa-check-circle"></i> Structured payment milestones</div>
+                        <div class="dual-point"><i class="fas fa-check-circle"></i> Real-time build updates</div>
+                        <div class="dual-point"><i class="fas fa-check-circle"></i> Secure document vault</div>
+                    </div>
+                </div>
+                <div class="dual-card developers">
+                    <div class="dual-icon"><i class="fas fa-users"></i></div>
+                    <h3 class="dual-title">For Developers</h3>
+                    <p class="dual-desc">Reach diaspora investors globally. List your developments, manage interest from qualified buyers, and build your reputation through our trust scoring system.</p>
+                    <div class="dual-points">
+                        <div class="dual-point"><i class="fas fa-check-circle"></i> Global investor reach</div>
+                        <div class="dual-point"><i class="fas fa-check-circle"></i> Investor interest management</div>
+                        <div class="dual-point"><i class="fas fa-check-circle"></i> Payment tracking dashboard</div>
+                        <div class="dual-point"><i class="fas fa-check-circle"></i> Trust score building</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Security -->
+    <section class="section trust-section">
+        <div class="container">
+            <div class="section-label">Trust & Security</div>
+            <h2 class="section-title">Your Investment,<br>Protected</h2>
+            <p class="section-subtitle">We built Propera with security and trust at its core. Every interaction is verified, every transaction tracked.</p>
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <div class="trust-icon"><i class="fas fa-file-shield"></i></div>
+                    <h4 class="trust-title">Admin Verification</h4>
+                    <p class="trust-desc">Every developer and project undergoes manual admin review with document verification.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon"><i class="fas fa-ranking-star"></i></div>
+                    <h4 class="trust-title">Trust Scoring</h4>
+                    <p class="trust-desc">Five-pillar trust score: Verification, Transparency, Payment, Communication, Dispute — all visible to investors.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon"><i class="fas fa-eye"></i></div>
+                    <h4 class="trust-title">Full Transparency</h4>
+                    <p class="trust-desc">View company registrations, project documents, payment histories, and investor feedback.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon"><i class="fas fa-lock"></i></div>
+                    <h4 class="trust-title">Secure Platform</h4>
+                    <p class="trust-desc">Encrypted communications, secure document storage, and audit-logged admin actions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-row">
+                <img src="https://images.pexels.com/photos/8123842/pexels-photo-8123842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Propera team" class="about-image">
+                <div class="about-content">
+                    <div class="section-label">About Propera</div>
+                    <h2 class="section-title">Connecting the<br>African Diaspora<br>to Home</h2>
+                    <p class="about-text">Propera was founded with a simple mission: make investing in African real estate accessible, transparent, and trustworthy for the global diaspora. We understand the challenges — distance, trust, and visibility — and we built a platform that solves all three.</p>
+                    <p class="about-text">Our team combines deep expertise in African real estate markets, fintech, and diaspora investment patterns. We partner only with verified developers and maintain the highest standards of transparency and accountability.</p>
+                    <div class="about-stats">
+                        <div>
+                            <div class="about-stat-value">2026</div>
+                            <div class="about-stat-label">Founded</div>
+                        </div>
+                        <div class="about-stat-divider"></div>
+                        <div>
+                            <div class="about-stat-value">London</div>
+                            <div class="about-stat-label">Headquarters</div>
+                        </div>
+                        <div class="about-stat-divider"></div>
+                        <div>
+                            <div class="about-stat-value">Global</div>
+                            <div class="about-stat-label">Investor Reach</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-row">
+                <div class="contact-info">
+                    <div class="section-label">Get In Touch</div>
+                    <h2 class="section-title">Request a<br>Call Back</h2>
+                    <p class="contact-desc">Interested in investing or listing your development on Propera? Fill in the form and our team will get back to you within 24 hours.</p>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <div class="contact-detail-text">hello@propera.com</div>
+                            <div class="contact-detail-sub">General enquiries</div>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <div class="contact-detail-text">+44 20 7946 0958</div>
+                            <div class="contact-detail-sub">Mon-Fri, 9am-6pm GMT</div>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <div class="contact-detail-text">London, United Kingdom</div>
+                            <div class="contact-detail-sub">Headquarters</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form" id="contactForm">
+                    <div id="formContent">
+                        <h3 class="form-title">Express Your Interest</h3>
+                        <p class="form-subtitle">We'll reach out to discuss how Propera can work for you.</p>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">First Name *</label>
+                                <input type="text" class="form-input" id="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name *</label>
+                                <input type="text" class="form-input" id="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" class="form-input" id="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-input" id="phone" placeholder="+44 7700 900000">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">I'm interested as...</label>
+                            <select class="form-input" id="interestType">
+                                <option value="investor">An Investor</option>
+                                <option value="developer">A Property Developer</option>
+                                <option value="both">Both</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message (optional)</label>
+                            <textarea class="form-input form-textarea" id="message" placeholder="Tell us a bit about what you're looking for..."></textarea>
+                        </div>
+                        <div class="form-divider"></div>
+                        <div class="form-section-label">How would you like to be contacted?</div>
+                        <div class="checkbox-row" style="margin-bottom: 20px;">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="contactPhone" value="phone"> Phone Call
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="contactEmail" value="email" checked> Email
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="contactWhatsApp" value="whatsapp"> WhatsApp
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="mailingList" value="yes"> Join our mailing list for updates on new developments and investment opportunities
+                            </label>
+                        </div>
+                        <button type="button" class="form-submit" id="submitBtn" onclick="submitForm()">
+                            Request Call Back
+                        </button>
+                    </div>
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-circle-check"></i>
+                        <h3>Thank You!</h3>
+                        <p>We've received your request. A member of our team will be in touch within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Invest in<br>Your Future?</h2>
+            <p class="cta-subtitle">Join hundreds of diaspora investors building wealth through verified African real estate.</p>
+            <a href="#join" onclick="openMailingModal(event)" class="cta-btn">Create Free Account <i class="fas fa-arrow-right"></i></a>
+            <div class="cta-badges">
+                <a href="https://apps.apple.com" target="_blank" rel="noopener" class="app-badge">
+                    <i class="fab fa-apple"></i>
+                    <div class="app-badge-text">
+                        <span class="app-badge-small">Download on the</span>
+                        <span class="app-badge-big">App Store</span>
+                    </div>
+                </a>
+                <a href="https://play.google.com" target="_blank" rel="noopener" class="app-badge">
+                    <i class="fab fa-google-play"></i>
+                    <div class="app-badge-text">
+                        <span class="app-badge-small">Get it on</span>
+                        <span class="app-badge-big">Google Play</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo-row">
+                        <div class="footer-logo"><img src="/propera-logo.png" alt="Propera"></div>
+                        <span class="footer-brand-text">Propera</span>
+                    </div>
+                    <p class="footer-tagline">Connecting the African diaspora with verified real estate opportunities.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-link-col">
+                        <h4>Platform</h4>
+                        <a href="#features">For Investors</a>
+                        <a href="#features">For Developers</a>
+                        <a href="#features">Trust Scores</a>
+                        <a href="/">Pricing</a>
+                    </div>
+                    <div class="footer-link-col">
+                        <h4>Company</h4>
+                        <a href="#about">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-link-col">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <span class="footer-copyright">&copy; 2026 Propera. All rights reserved.</span>
+                <span class="footer-disclaimer">Propera is a technology platform. We do not provide financial, legal, or investment advice.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mailing list popup - shows after 3 seconds on first visit
+        function showPopup() {
+            document.getElementById('mailingPopup').classList.add('show');
+        }
+
+        function closePopup() {
+            document.getElementById('mailingPopup').classList.remove('show');
+            localStorage.setItem('propera_popup_dismissed', 'true');
+        }
+
+        async function submitPopup() {
+            const name = document.getElementById('popupName').value.trim();
+            const email = document.getElementById('popupEmail').value.trim();
+            const btn = document.getElementById('popupSubmitBtn');
+
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Joining...';
+
+            try {
+                const response = await fetch('/api/contact-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        first_name: name || 'Subscriber',
+                        last_name: '',
+                        email: email,
+                        phone: '',
+                        interest_type: 'investor',
+                        message: 'Joined via mailing list popup',
+                        contact_preferences: ['email'],
+                        join_mailing_list: true
+                    })
+                });
+
+                if (response.ok) {
+                    document.getElementById('popupFormContent').style.display = 'none';
+                    document.getElementById('popupSuccess').classList.add('show');
+                    localStorage.setItem('propera_popup_dismissed', 'true');
+                    setTimeout(closePopup, 3000);
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = 'Join the Mailing List';
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+                btn.disabled = false;
+                btn.textContent = 'Join the Mailing List';
+            }
+        }
+
+        // Show popup after 3 seconds if not previously dismissed
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('propera_popup_dismissed')) {
+                setTimeout(showPopup, 3000);
+            }
+        });
+
+        async function submitForm() {
+            const btn = document.getElementById('submitBtn');
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const interestType = document.getElementById('interestType').value;
+            const message = document.getElementById('message').value.trim();
+
+            // Contact preferences
+            const contactPreferences = [];
+            if (document.getElementById('contactPhone').checked) contactPreferences.push('phone');
+            if (document.getElementById('contactEmail').checked) contactPreferences.push('email');
+            if (document.getElementById('contactWhatsApp').checked) contactPreferences.push('whatsapp');
+
+            const joinMailingList = document.getElementById('mailingList').checked;
+
+            // Validation
+            if (!firstName || !lastName || !email) {
+                alert('Please fill in all required fields (First Name, Last Name, Email).');
+                return;
+            }
+
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (contactPreferences.length === 0) {
+                alert('Please select at least one contact preference.');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            try {
+                const response = await fetch('/api/contact-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        first_name: firstName,
+                        last_name: lastName,
+                        email: email,
+                        phone: phone,
+                        interest_type: interestType,
+                        message: message,
+                        contact_preferences: contactPreferences,
+                        join_mailing_list: joinMailingList
+                    })
+                });
+
+                if (response.ok) {
+                    document.getElementById('formContent').style.display = 'none';
+                    document.getElementById('formSuccess').classList.add('show');
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = 'Request Call Back';
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+                btn.disabled = false;
+                btn.textContent = 'Request Call Back';
+            }
+        }
+    </script>
+
+
+<script>
+function openMailingModal(e) {
+  e.preventDefault();
+  const modal = document.getElementById('mailing-modal');
+  if (modal) { modal.classList.add('active'); modal.style.display = 'flex'; }
+}
+</script>
+</body>
+</html>
