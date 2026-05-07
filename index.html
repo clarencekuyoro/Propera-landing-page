@@ -1900,7 +1900,7 @@
                 opt.value = code;
                 opt.dataset.dial = dial;
                 opt.dataset.name = name;
-                opt.textContent = `${flag}  ${name} (${dial})`;
+                opt.textContent = `${name}  ${flag}  (${dial})`;
                 sel.appendChild(opt);
             });
         }
@@ -1948,18 +1948,17 @@
             btn.textContent = 'Joining...';
 
             try {
-                const response = await fetch('https://formsubmit.co/ajax/hello@properahq.com', {
+                const fd = new FormData();
+                fd.append('access_key', 'f0223920-c715-4c99-a4d4-f0261f096db9');
+                fd.append('subject', 'Propera — Mailing List Signup');
+                fd.append('from_name', 'Propera Website');
+                fd.append('Source', 'Mailing List Popup');
+                fd.append('Name', name || 'Subscriber');
+                fd.append('Email', email);
+                fd.append('Joined Mailing List', 'Yes');
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({
-                        _subject: 'Propera — Mailing List Signup',
-                        _template: 'table',
-                        _captcha: 'false',
-                        Source: 'Mailing List Popup',
-                        Name: name || 'Subscriber',
-                        Email: email,
-                        'Joined Mailing List': 'Yes'
-                    })
+                    body: fd
                 });
 
                 if (response.ok) {
@@ -2025,25 +2024,24 @@
             btn.textContent = 'Submitting...';
 
             try {
-                const response = await fetch('https://formsubmit.co/ajax/hello@properahq.com', {
+                const fd = new FormData();
+                fd.append('access_key', 'f0223920-c715-4c99-a4d4-f0261f096db9');
+                fd.append('subject', `Propera — New ${interestType === 'developer' ? 'Developer' : 'Investor'} Enquiry from ${firstName} ${lastName}`);
+                fd.append('from_name', 'Propera Website');
+                fd.append('replyto', email);
+                fd.append('Source', 'Contact Form');
+                fd.append('First Name', firstName);
+                fd.append('Last Name', lastName);
+                fd.append('Email', email);
+                fd.append('Phone', phone || '(not provided)');
+                fd.append('Country', country || '(not provided)');
+                fd.append('Interested As', interestType);
+                fd.append('Message', message || '(no message)');
+                fd.append('Preferred Contact', contactPreferences.join(', ') || '(none selected)');
+                fd.append('Joined Mailing List', joinMailingList ? 'Yes' : 'No');
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({
-                        _subject: `Propera — New ${interestType === 'developer' ? 'Developer' : 'Investor'} Enquiry from ${firstName} ${lastName}`,
-                        _template: 'table',
-                        _captcha: 'false',
-                        _replyto: email,
-                        Source: 'Contact Form',
-                        'First Name': firstName,
-                        'Last Name': lastName,
-                        Email: email,
-                        Phone: phone || '(not provided)',
-                        Country: country || '(not provided)',
-                        'Interested As': interestType,
-                        Message: message || '(no message)',
-                        'Preferred Contact': contactPreferences.join(', ') || '(none selected)',
-                        'Joined Mailing List': joinMailingList ? 'Yes' : 'No'
-                    })
+                    body: fd
                 });
 
                 if (response.ok) {
